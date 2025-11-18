@@ -401,6 +401,11 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('setup-seo','setupSeo')->name('setup.seo');
         Route::put('setup-seo/update','setupSeoUpdate')->name('setup.seo.update');
     });
+    // OAuth Settings Section
+    Route::controller(\App\Http\Controllers\Admin\OAuthSettingsController::class)->prefix('oauth-settings')->name('oauth.settings.')->group(function(){
+        Route::get('index','index')->name('index');
+        Route::put('update','update')->name('update');
+    });
     // App Settings Section
     Route::prefix('app-settings')->name('app.settings.')->group(function () {
         Route::controller(AppSettingsController::class)->group(function () {

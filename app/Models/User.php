@@ -43,6 +43,8 @@ class User extends Authenticatable
         "two_factor_status"           => "integer",
         "two_factor_secret"           => "string",
         'device_id'           => 'string',
+        'oauth_provider'           => 'string',
+        'oauth_provider_id'           => 'string',
         'sudo_customer'           => 'object',
         'sudo_account'           => 'object',
         'stripe_card_holders'       => 'object',
