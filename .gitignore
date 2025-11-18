@@ -2,3 +2,25 @@
 
 #Ignore vscode AI rules
 .github\instructions\codacy.instructions.md
+
+# Dependencies
+/vendor
+/node_modules
+
+# Environment files
+.env
+
+# Build artifacts
+/public/hot
+/public/storage
+/storage/*.key
+/storage/framework
+
+# IDE
+/.vscode
+/.idea
+/.vs
+
+# OS
+.DS_Store
+Thumbs.db
