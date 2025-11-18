@@ -73,7 +73,10 @@ class PaymentGatewayConst {
     const COINGATE              = 'coingate';
     const TATUM                 = 'tatum';
     const PERFECT_MONEY         = 'perfect-money';
-    const PAYSTACK                  = "paystack";
+    const PAYSTACK              = "paystack";
+    const MOLLIE                = 'mollie';
+    const SQUARE                = 'square';
+    const AUTHORIZENET          = 'authorizenet';
 
     const SEND = "SEND";
     const RECEIVED = "RECEIVED";
@@ -119,7 +122,10 @@ class PaymentGatewayConst {
             self::COINGATE      => 'coingateInit',
             self::TATUM         => 'tatumInit',
             self::PERFECT_MONEY => 'perfectMoneyInit',
-            self::PAYSTACK      => 'paystackInit'
+            self::PAYSTACK      => 'paystackInit',
+            self::MOLLIE        => 'mollieInit',
+            self::SQUARE        => 'squareInit',
+            self::AUTHORIZENET  => 'authorizeNetInit',
         ];
 
         if($alias == null) {
@@ -154,6 +160,9 @@ class PaymentGatewayConst {
             'isRazorpay'        => self::RAZORPAY,
             'isPerfectMoney'    => self::PERFECT_MONEY,
             'isPayStack'        => self::PAYSTACK,
+            'isMollie'          => self::MOLLIE,
+            'isSquare'          => self::SQUARE,
+            'isAuthorizeNet'    => self::AUTHORIZENET,
         ];
     }
 
