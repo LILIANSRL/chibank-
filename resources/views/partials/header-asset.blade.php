@@ -21,6 +21,8 @@
    <link rel="stylesheet" href="{{ asset('public/frontend/') }}/css/style.css">
    <!-- enhanced animations css link -->
    <link rel="stylesheet" href="{{ asset('public/frontend/') }}/css/enhanced-animations.css">
+   <!-- section enhancements css link -->
+   <link rel="stylesheet" href="{{ asset('public/frontend/') }}/css/section-enhancements.css">
    @php
    $color = @$basic_settings->base_color ?? '#4A8FCA';
 @endphp
