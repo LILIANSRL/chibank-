@@ -25,6 +25,8 @@
 <link rel="stylesheet" href="{{ asset('public/frontend/') }}/css/enhanced-animations.css">
 <!-- dashboard enhancements css link -->
 <link rel="stylesheet" href="{{ asset('public/backend/') }}/css/dashboard-enhancements.css">
+<!-- chibank dynamic effects css link -->
+<link rel="stylesheet" href="{{ asset('public/frontend/') }}/css/chibank-dynamic-effects.css">
 @php
     $color = @$basic_settings->base_color ?? '#000000';
 

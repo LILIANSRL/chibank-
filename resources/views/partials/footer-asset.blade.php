@@ -23,6 +23,8 @@
 <script src="{{ asset('public/frontend/') }}/js/main.js"></script>
 <!-- enhanced interactions js -->
 <script src="{{ asset('public/frontend/') }}/js/enhanced-interactions.js"></script>
+<!-- chibank dynamic interactions js -->
+<script src="{{ asset('public/frontend/') }}/js/chibank-dynamic-interactions.js"></script>
 
 <script>
      $(".langSel").on("change", function() {

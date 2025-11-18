@@ -23,6 +23,8 @@
    <link rel="stylesheet" href="{{ asset('public/frontend/') }}/css/enhanced-animations.css">
    <!-- section enhancements css link -->
    <link rel="stylesheet" href="{{ asset('public/frontend/') }}/css/section-enhancements.css">
+   <!-- chibank dynamic effects css link -->
+   <link rel="stylesheet" href="{{ asset('public/frontend/') }}/css/chibank-dynamic-effects.css">
    @php
    $color = @$basic_settings->base_color ?? '#4A8FCA';
 @endphp
