@@ -701,14 +701,70 @@ trait Tatum {
                 'chain'     => 'tron',
                 'testnet'   => false,
                 'coin'      => 'USDT',
-                'status'    => false,
+                'status'    => true,
             ],
             'SOL'       => [
                 'chain'     => 'solana',
-                'testnet'   => false,
+                'testnet'   => 'solana-devnet',
                 'coin'      => 'SOL',
                 'status'    => true,
-            ]
+            ],
+            'MATIC'     => [
+                'chain'     => 'polygon',
+                'testnet'   => 'polygon-mumbai',
+                'coin'      => 'MATIC',
+                'status'    => true,
+            ],
+            'BNB'       => [
+                'chain'     => 'bsc',
+                'testnet'   => 'bsc-testnet',
+                'coin'      => 'BNB',
+                'status'    => true,
+            ],
+            'AVAX'      => [
+                'chain'     => 'avax',
+                'testnet'   => 'avax-testnet',
+                'coin'      => 'AVAX',
+                'status'    => true,
+            ],
+            'ADA'       => [
+                'chain'     => 'cardano',
+                'testnet'   => false,
+                'coin'      => 'ADA',
+                'status'    => true,
+            ],
+            'DOT'       => [
+                'chain'     => 'polkadot',
+                'testnet'   => false,
+                'coin'      => 'DOT',
+                'status'    => true,
+            ],
+            'LTC'       => [
+                'chain'     => 'litecoin',
+                'testnet'   => 'litecoin-testnet',
+                'coin'      => 'LTC',
+                'status'    => true,
+                'account_balance'   => "{chain}/address/balance/{address}",
+            ],
+            'XRP'       => [
+                'chain'     => 'xrp',
+                'testnet'   => 'xrp-testnet',
+                'coin'      => 'XRP',
+                'status'    => true,
+            ],
+            'TRX'       => [
+                'chain'     => 'tron',
+                'testnet'   => 'tron-shasta',
+                'coin'      => 'TRX',
+                'status'    => true,
+            ],
+            'DOGE'      => [
+                'chain'     => 'dogecoin',
+                'testnet'   => 'dogecoin-testnet',
+                'coin'      => 'DOGE',
+                'status'    => true,
+                'account_balance'   => "{chain}/address/balance/{address}",
+            ],
         ];
 
         if($coin) {

@@ -17,6 +17,7 @@ use App\Http\Controllers\User\Auth\LoginController as UserLoginController;
 use App\Http\Controllers\User\Auth\RegisterController as UserRegisterController;
 use App\Http\Controllers\User\AuthorizationController;
 use App\Http\Controllers\Admin\AuthorizationController as AdminAuthorizationController;
+use App\Http\Controllers\User\WalletAuthController;
 
 // Admin Authentication Route
 Route::middleware(['guest','admin.login.guard'])->prefix('admin')->name('admin.')->group(function(){
@@ -40,6 +41,13 @@ Route::middleware(['guest','admin.login.guard'])->prefix('admin')->name('admin.'
 Route::name('user.')->group(function(){
     Route::get('login',[UserLoginController::class,"showLoginForm"])->name('login');
     Route::post('login',[UserLoginController::class,"login"])->name('login.submit');
+
+    // Wallet Login Routes
+    Route::controller(WalletAuthController::class)->prefix('wallet-login')->name('wallet.login.')->group(function(){
+        Route::get('/', 'showLoginForm')->name('form');
+        Route::post('request-nonce', 'requestNonce')->name('request.nonce');
+        Route::post('verify-signature', 'verifySignature')->name('verify.signature');
+    });
 
     Route::get('register',[UserRegisterController::class,"showRegistrationForm"])->name('register')->middleware(['user.registration.permission']);
     Route::post('register',[UserRegisterController::class,"register"])->name('register.submit')->middleware(['user.registration.permission']);
