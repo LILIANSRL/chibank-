@@ -65,6 +65,30 @@ npm run docker:push
 
 ## 🔧 Manual Deployment / 手动部署
 
+### Using Makefile (Recommended) / 使用 Makefile（推荐）
+
+```bash
+# View all available commands / 查看所有可用命令
+make help
+
+# Install dependencies / 安装依赖
+make install
+
+# Build for production / 生产环境构建
+make build-prod
+
+# Deploy to server / 部署到服务器
+make deploy
+
+# Start with Docker / 使用 Docker 启动
+make docker-up
+
+# View Docker logs / 查看 Docker 日志
+make docker-logs
+```
+
+### Using Scripts Directly / 直接使用脚本
+
 ```bash
 # 1. Install dependencies / 安装依赖
 composer install --no-dev --optimize-autoloader
