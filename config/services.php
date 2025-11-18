@@ -40,5 +40,29 @@ return [
         'client_secret' => env('FACEBOOK_CLIENT_SECRET',""),
         'redirect' => env('FACEBOOK_CALLBACK',""),
     ],
+    'alipay' => [
+        'client_id' => env('ALIPAY_APP_ID',""),
+        'client_secret' => env('ALIPAY_PRIVATE_KEY',""),
+        'redirect' => env('ALIPAY_CALLBACK',""),
+        'public_key' => env('ALIPAY_PUBLIC_KEY',""),
+    ],
+    'wechat' => [
+        'client_id' => env('WECHAT_APP_ID',""),
+        'client_secret' => env('WECHAT_APP_SECRET',""),
+        'redirect' => env('WECHAT_CALLBACK',""),
+    ],
+    // Wallet providers configuration
+    'wallet' => [
+        'metamask' => [
+            'enabled' => env('WALLET_METAMASK_ENABLED', false),
+        ],
+        'walletconnect' => [
+            'enabled' => env('WALLET_WALLETCONNECT_ENABLED', false),
+            'project_id' => env('WALLETCONNECT_PROJECT_ID',""),
+        ],
+        'trust_wallet' => [
+            'enabled' => env('WALLET_TRUST_ENABLED', false),
+        ],
+    ],
 
 ];

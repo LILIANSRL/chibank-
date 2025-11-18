@@ -41,6 +41,11 @@ Route::name('user.')->group(function(){
     Route::get('login',[UserLoginController::class,"showLoginForm"])->name('login');
     Route::post('login',[UserLoginController::class,"login"])->name('login.submit');
 
+    // Social Login Routes
+    Route::get('auth/{provider}', [\App\Http\Controllers\User\Auth\SocialLoginController::class, 'redirectToProvider'])->name('social.login');
+    Route::get('auth/{provider}/callback', [\App\Http\Controllers\User\Auth\SocialLoginController::class, 'handleProviderCallback'])->name('social.callback');
+    Route::post('auth/wallet', [\App\Http\Controllers\User\Auth\SocialLoginController::class, 'walletAuth'])->name('wallet.auth');
+
     Route::get('register',[UserRegisterController::class,"showRegistrationForm"])->name('register')->middleware(['user.registration.permission']);
     Route::post('register',[UserRegisterController::class,"register"])->name('register.submit')->middleware(['user.registration.permission']);
     Route::post('send/verify-code',[UserRegisterController::class,"sendVerifyCode"])->name('send.code')->middleware(['user.registration.permission']);
