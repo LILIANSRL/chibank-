@@ -21,6 +21,12 @@
 <link rel="stylesheet" href="https://appdevs.cloud/cdn/fileholder/v1.0/css/fileholder-style.css" type="text/css">
 <!-- main style css link -->
 <link rel="stylesheet" href="{{ asset('public/frontend/') }}/css/style.css">
+<!-- enhanced animations css link -->
+<link rel="stylesheet" href="{{ asset('public/frontend/') }}/css/enhanced-animations.css">
+<!-- dashboard enhancements css link -->
+<link rel="stylesheet" href="{{ asset('public/backend/') }}/css/dashboard-enhancements.css">
+<!-- chibank dynamic effects css link -->
+<link rel="stylesheet" href="{{ asset('public/frontend/') }}/css/chibank-dynamic-effects.css">
 @php
     $color = @$basic_settings->base_color ?? '#000000';
 
