@@ -2,3 +2,18 @@
 
 #Ignore vscode AI rules
 .github\instructions\codacy.instructions.md
+
+# Archive and temporary files
+archive/
+*.tmp
+*.temp
+
+# Document backups
+~$*
+*.bak
+
+# Executables
+*.exe
+*.dll
+*.so
+*.dylib
