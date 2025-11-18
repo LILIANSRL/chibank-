@@ -19,6 +19,8 @@
       <link rel="stylesheet" href="{{ asset('public/frontend/') }}/css/odometer.css">
       <!-- main style css link -->
    <link rel="stylesheet" href="{{ asset('public/frontend/') }}/css/style.css">
+   <!-- enhanced animations css link -->
+   <link rel="stylesheet" href="{{ asset('public/frontend/') }}/css/enhanced-animations.css">
    @php
    $color = @$basic_settings->base_color ?? '#4A8FCA';
 @endphp

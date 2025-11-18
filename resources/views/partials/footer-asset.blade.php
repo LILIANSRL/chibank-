@@ -21,7 +21,8 @@
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 <script src="{{ asset('public/frontend/') }}/js/main.js"></script>
-
+<!-- enhanced interactions js -->
+<script src="{{ asset('public/frontend/') }}/js/enhanced-interactions.js"></script>
 
 <script>
      $(".langSel").on("change", function() {
