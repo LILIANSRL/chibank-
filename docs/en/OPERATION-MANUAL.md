@@ -56,6 +56,12 @@ ChiBank/QRPay is a full-featured payment gateway system built on the Laravel fra
   - GD Library
   - Fileinfo Extension
 
+### Development Tools Requirements
+
+- **Composer**: PHP dependency manager for installing and managing Laravel and its packages
+- **Node.js**: >= 14.0.0, JavaScript runtime environment
+- **npm**: JavaScript package manager that comes with Node.js, enabling developers to easily share and reuse code. Used for installing frontend dependencies and building assets
+
 ### Recommended Configuration
 
 - **Memory**: Minimum 2GB RAM
@@ -75,8 +81,14 @@ cd chibank-
 
 ### Step 2: Install Dependencies
 
+Install backend PHP dependencies and frontend JavaScript dependencies:
+
 ```bash
+# Install PHP dependencies (via Composer)
 composer install
+
+# Install JavaScript dependencies (via npm)
+# npm is the package manager that comes with Node.js, used for managing frontend assets
 npm install
 ```
 
