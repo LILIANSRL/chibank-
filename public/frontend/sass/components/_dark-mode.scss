@@ -1,0 +1,240 @@
+/*-------------------------------------------------
+    [ ### Dark Mode Support ]
+*/
+
+// Dark Mode Base Styles
+[data-theme="dark"] {
+    // Background Colors
+    background-color: $dark-bg-primary;
+    color: $dark-text-primary;
+    
+    // Text Colors
+    body {
+        background-color: $dark-bg-primary;
+        color: $dark-text-primary;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        color: $dark-text-primary;
+    }
+    
+    p, span, div {
+        color: $dark-text-secondary;
+    }
+    
+    // Card Styles
+    .card,
+    .custom-card,
+    .dashboard-card {
+        background-color: $dark-bg-secondary;
+        border-color: $dark-bg-tertiary;
+        color: $dark-text-primary;
+        
+        &:hover {
+            background-color: lighten($dark-bg-secondary, 3%);
+        }
+    }
+    
+    // Input Fields
+    .form-control,
+    .custom-input,
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="number"],
+    textarea,
+    select {
+        background-color: $dark-bg-tertiary;
+        border-color: lighten($dark-bg-tertiary, 10%);
+        color: $dark-text-primary;
+        
+        &:focus {
+            background-color: $dark-bg-secondary;
+            border-color: $primary-blue;
+        }
+        
+        &::placeholder {
+            color: $dark-text-secondary;
+        }
+    }
+    
+    // Tables
+    table,
+    .table {
+        color: $dark-text-primary;
+        
+        thead {
+            background: linear-gradient(135deg, $dark-bg-secondary 0%, $dark-bg-tertiary 100%);
+        }
+        
+        tbody tr {
+            &:hover {
+                background-color: $dark-bg-tertiary;
+            }
+        }
+        
+        td, th {
+            border-color: $dark-bg-tertiary;
+        }
+    }
+    
+    // Modals
+    .modal-content {
+        background-color: $dark-bg-secondary;
+        color: $dark-text-primary;
+    }
+    
+    .modal-header,
+    .modal-footer {
+        border-color: $dark-bg-tertiary;
+    }
+    
+    // Dropdown Menus
+    .dropdown-menu {
+        background-color: $dark-bg-secondary;
+        border-color: $dark-bg-tertiary;
+        
+        .dropdown-item {
+            color: $dark-text-primary;
+            
+            &:hover {
+                background-color: $dark-bg-tertiary;
+            }
+        }
+    }
+    
+    // Alerts
+    .alert {
+        &.alert-success {
+            background-color: rgba($success, 0.15);
+            color: lighten($success, 20%);
+        }
+        
+        &.alert-warning {
+            background-color: rgba($warning, 0.15);
+            color: lighten($warning, 20%);
+        }
+        
+        &.alert-danger,
+        &.alert-error {
+            background-color: rgba($error, 0.15);
+            color: lighten($error, 20%);
+        }
+        
+        &.alert-info {
+            background-color: rgba($info, 0.15);
+            color: lighten($info, 20%);
+        }
+    }
+    
+    // Header
+    .header-section {
+        background-color: $dark-bg-secondary;
+        
+        &.sticky {
+            background-color: rgba($dark-bg-secondary, 0.95);
+        }
+        
+        .navbar-nav .nav-link {
+            color: $dark-text-primary;
+            
+            &:hover {
+                color: $primary-blue;
+            }
+        }
+    }
+    
+    // Footer
+    footer,
+    .footer-section {
+        background-color: $dark-bg-primary;
+        border-top: 1px solid $dark-bg-tertiary;
+    }
+    
+    // Borders
+    hr {
+        border-color: $dark-bg-tertiary;
+    }
+    
+    // Skeleton Loader
+    .skeleton-loader {
+        background: linear-gradient(90deg, $dark-bg-secondary 25%, $dark-bg-tertiary 50%, $dark-bg-secondary 75%);
+    }
+    
+    // Progress Bars
+    .progress {
+        background-color: $dark-bg-tertiary;
+    }
+    
+    // Pagination
+    .pagination {
+        .page-link {
+            background-color: $dark-bg-secondary;
+            border-color: $dark-bg-tertiary;
+            color: $dark-text-primary;
+            
+            &:hover {
+                background-color: $dark-bg-tertiary;
+            }
+        }
+    }
+    
+    // Breadcrumb
+    .breadcrumb-item {
+        color: $dark-text-secondary;
+        
+        &.active {
+            color: $primary-blue;
+        }
+        
+        + .breadcrumb-item::before {
+            color: $dark-text-secondary;
+        }
+    }
+    
+    // Stats Cards
+    .stat-card {
+        background: linear-gradient(135deg, $dark-bg-secondary 0%, $dark-bg-tertiary 100%);
+    }
+}
+
+// Dark Mode Toggle Button
+.dark-mode-toggle {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, $primary-gradient-start 0%, $primary-gradient-end 100%);
+    color: $white;
+    border: none;
+    box-shadow: $shadow-xl;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    transition: all $transition-base;
+    z-index: 1000;
+    
+    &:hover {
+        transform: scale(1.1) rotate(15deg);
+        box-shadow: 0 20px 40px rgba(12, 86, 219, 0.4);
+    }
+    
+    &:active {
+        transform: scale(0.95);
+    }
+    
+    i {
+        transition: transform $transition-base;
+    }
+}
+
+// Smooth transition for theme changes
+* {
+    transition-property: background-color, color, border-color;
+    transition-duration: $transition-base;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}

@@ -22,6 +22,9 @@
 
 <script src="{{ asset('public/frontend/') }}/js/main.js"></script>
 
+<!-- Enterprise UI Enhancements -->
+<script src="{{ asset('public/frontend/') }}/js/enhancements.js"></script>
+
 
 <script>
      $(".langSel").on("change", function() {

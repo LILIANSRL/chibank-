@@ -1,0 +1,350 @@
+/*-------------------------------------------------
+    [ ### Modern UI Enhancements ]
+*/
+
+// Smooth Animations and Transitions
+* {
+    transition: background-color $transition-base, 
+                color $transition-base, 
+                border-color $transition-base,
+                box-shadow $transition-base,
+                transform $transition-base;
+}
+
+// Modern Card Styles
+.card,
+.custom-card,
+.dashboard-card {
+    border-radius: $radius-lg !important;
+    box-shadow: $shadow-md;
+    border: 1px solid $gray-200;
+    transition: all $transition-base;
+    
+    &:hover {
+        box-shadow: $shadow-xl;
+        transform: translateY(-2px);
+    }
+}
+
+// Enhanced Button Styles
+.btn,
+.button,
+.cmn-btn,
+.custom-btn {
+    border-radius: $radius-md;
+    font-weight: 500;
+    letter-spacing: 0.025em;
+    transition: all $transition-base;
+    position: relative;
+    overflow: hidden;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+        transition: left $transition-slow;
+    }
+    
+    &:hover::before {
+        left: 100%;
+    }
+    
+    &:hover {
+        transform: translateY(-1px);
+        box-shadow: $shadow-lg;
+    }
+    
+    &:active {
+        transform: translateY(0);
+    }
+}
+
+// Gradient Primary Button
+.btn-primary,
+.cmn-btn {
+    background: linear-gradient(135deg, $primary-gradient-start 0%, $primary-gradient-end 100%);
+    border: none;
+    
+    &:hover {
+        background: linear-gradient(135deg, darken($primary-gradient-start, 5%) 0%, darken($primary-gradient-end, 5%) 100%);
+    }
+}
+
+// Modern Input Fields
+.form-control,
+.custom-input,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+textarea,
+select {
+    border-radius: $radius-md;
+    border: 1px solid $gray-300;
+    transition: all $transition-base;
+    
+    &:focus {
+        border-color: $primary-blue;
+        box-shadow: 0 0 0 3px rgba(12, 86, 219, 0.1);
+        outline: none;
+    }
+    
+    &:hover {
+        border-color: $gray-400;
+    }
+}
+
+// Loading States
+.skeleton-loader {
+    background: linear-gradient(90deg, $gray-200 25%, $gray-300 50%, $gray-200 75%);
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s infinite;
+    border-radius: $radius-md;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+// Modern Badges
+.badge,
+.custom-badge {
+    border-radius: $radius-md;
+    padding: 0.25rem 0.75rem;
+    font-weight: 500;
+    font-size: 0.75rem;
+    letter-spacing: 0.025em;
+}
+
+// Enhanced Tables
+table,
+.table {
+    border-radius: $radius-lg;
+    overflow: hidden;
+    
+    thead {
+        background: linear-gradient(135deg, $gray-50 0%, $gray-100 100%);
+    }
+    
+    tbody tr {
+        transition: background-color $transition-fast;
+        
+        &:hover {
+            background-color: $gray-50;
+        }
+    }
+}
+
+// Modern Alerts
+.alert,
+.custom-alert {
+    border-radius: $radius-lg;
+    border-left: 4px solid;
+    box-shadow: $shadow-sm;
+    
+    &.alert-success {
+        border-left-color: $success;
+        background-color: rgba($success, 0.1);
+    }
+    
+    &.alert-warning {
+        border-left-color: $warning;
+        background-color: rgba($warning, 0.1);
+    }
+    
+    &.alert-danger,
+    &.alert-error {
+        border-left-color: $error;
+        background-color: rgba($error, 0.1);
+    }
+    
+    &.alert-info {
+        border-left-color: $info;
+        background-color: rgba($info, 0.1);
+    }
+}
+
+// Smooth Scroll
+html {
+    scroll-behavior: smooth;
+}
+
+// Enhanced Header Sticky Effect
+.header-section {
+    transition: all $transition-base;
+    
+    &.sticky {
+        box-shadow: $shadow-lg;
+        backdrop-filter: blur(10px);
+        background-color: rgba(255, 255, 255, 0.95);
+    }
+}
+
+// Modern Modal Styling
+.modal-content {
+    border-radius: $radius-xl;
+    border: none;
+    box-shadow: $shadow-xl;
+}
+
+.modal-header {
+    border-bottom: 1px solid $gray-200;
+    border-radius: $radius-xl $radius-xl 0 0;
+}
+
+.modal-footer {
+    border-top: 1px solid $gray-200;
+    border-radius: 0 0 $radius-xl $radius-xl;
+}
+
+// Improved Dropdown Menus
+.dropdown-menu {
+    border-radius: $radius-lg;
+    box-shadow: $shadow-xl;
+    border: 1px solid $gray-200;
+    padding: 0.5rem;
+    
+    .dropdown-item {
+        border-radius: $radius-md;
+        transition: all $transition-fast;
+        
+        &:hover {
+            background-color: $gray-100;
+            transform: translateX(4px);
+        }
+    }
+}
+
+// Toast Notifications
+.toast-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    max-width: 350px;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-xl;
+    z-index: 9999;
+    animation: slide-in-right $transition-base;
+}
+
+@keyframes slide-in-right {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+// Enhanced Icon Styling
+.icon-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: $radius-lg;
+    background: linear-gradient(135deg, $gray-100 0%, $gray-200 100%);
+    transition: all $transition-base;
+    
+    &:hover {
+        transform: scale(1.1) rotate(5deg);
+        box-shadow: $shadow-md;
+    }
+}
+
+// Gradient Text
+.gradient-text {
+    background: linear-gradient(135deg, $primary-gradient-start 0%, $secondary-purple 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+// Enhanced Stats Cards
+.stat-card {
+    background: linear-gradient(135deg, $white 0%, $gray-50 100%);
+    border-radius: $radius-xl;
+    padding: 1.5rem;
+    box-shadow: $shadow-md;
+    transition: all $transition-base;
+    
+    &:hover {
+        box-shadow: $shadow-xl;
+        transform: translateY(-4px);
+    }
+    
+    .stat-icon {
+        width: 4rem;
+        height: 4rem;
+        border-radius: $radius-lg;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, $primary-gradient-start 0%, $primary-gradient-end 100%);
+        color: $white;
+        font-size: 1.5rem;
+    }
+}
+
+// Progress Bars with Gradient
+.progress {
+    border-radius: $radius-md;
+    background-color: $gray-200;
+    
+    .progress-bar {
+        background: linear-gradient(90deg, $primary-gradient-start 0%, $accent-teal 100%);
+        border-radius: $radius-md;
+    }
+}
+
+// Enhanced Pagination
+.pagination {
+    .page-item {
+        margin: 0 0.25rem;
+        
+        .page-link {
+            border-radius: $radius-md;
+            border: 1px solid $gray-300;
+            transition: all $transition-fast;
+            
+            &:hover {
+                background-color: $gray-100;
+                border-color: $gray-400;
+                transform: translateY(-1px);
+            }
+        }
+        
+        &.active .page-link {
+            background: linear-gradient(135deg, $primary-gradient-start 0%, $primary-gradient-end 100%);
+            border-color: $primary-blue;
+        }
+    }
+}
+
+// Breadcrumb Enhancement
+.breadcrumb {
+    background-color: transparent;
+    
+    .breadcrumb-item {
+        &.active {
+            color: $primary-blue;
+            font-weight: 500;
+        }
+        
+        + .breadcrumb-item::before {
+            color: $gray-400;
+        }
+    }
+}
