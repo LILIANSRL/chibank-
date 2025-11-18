@@ -92,6 +92,11 @@ class GlobalController extends Controller
         return Response::success($success,$user,200);
     }
     public function webHookResponse(Request $request){
+        $request->validate([
+            'data.reference' => 'required|string',
+            'data.status' => 'required|string',
+        ]);
+        
         $response_data = $request->all();
         $transaction = Transaction::where('callback_ref',$response_data['data']['reference'])->first();
 
@@ -139,6 +144,10 @@ class GlobalController extends Controller
 
     }
     public function setCookie(Request $request){
+        $request->validate([
+            'type' => 'required|in:allow,decline',
+        ]);
+        
         $userAgent = $request->header('User-Agent');
         $cookie_status = $request->type;
         if($cookie_status == 'allow'){
@@ -161,6 +170,10 @@ class GlobalController extends Controller
     }
      // ajax call for get user available balance by currency
      public function userWalletBalance(Request $request){
+        $request->validate([
+            'id' => 'required|integer',
+        ]);
+        
         $user_wallets = UserWallet::where(['user_id' => auth()->user()->id, 'currency_id' => $request->id])->first();
         
         if (!$user_wallets) {
@@ -170,6 +183,10 @@ class GlobalController extends Controller
         return $user_wallets->balance;
     }
     public function receiverWallet(Request $request){
+        $request->validate([
+            'code' => 'required|string',
+        ]);
+        
         $receiver_currency = ExchangeRate::where(['currency_code' => $request->code])->first();
         
         if (!$receiver_currency) {
@@ -180,6 +197,11 @@ class GlobalController extends Controller
     }
     //reloadly webhook response
     public function webhookInfo(Request $request){
+        $request->validate([
+            'data.customIdentifier' => 'required|string',
+            'data.status' => 'required|string',
+        ]);
+        
         $response_data = $request->all();
         $custom_identifier = $response_data['data']['customIdentifier'];
         $transaction = Transaction::where('type',PaymentGatewayConst::MOBILETOPUP)->where('callback_ref',$custom_identifier)->first();
