@@ -30,12 +30,14 @@ jobs:
           BASE_BRANCH="${{ env.BASE_BRANCH || 'main' }}"
           echo "Using base branch: $BASE_BRANCH"
           git fetch origin $BASE_BRANCH:$BASE_BRANCH || git fetch origin $BASE_BRANCH
+          git fetch origin $BASE_BRANCH:refs/remotes/origin/$BASE_BRANCH || true
           git show-ref --verify --quiet refs/heads/$BASE_BRANCH || git branch --track $BASE_BRANCH origin/$BASE_BRANCH || true
           git fetch --all --prune
 
       - name: Compute changed files vs base
         shell: bash
         run: |
+          BASE_BRANCH="${{ env.BASE_BRANCH || 'main' }}"
           git --no-pager fetch origin $BASE_BRANCH || true
           git --no-pager diff --name-only origin/$BASE_BRANCH...HEAD > changed_files.txt || true
           echo "Changed files (first 200 lines):"
