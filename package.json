@@ -2,7 +2,8 @@
     "private": true,
     "scripts": {
         "dev": "vite",
-        "build": "vite build"
+        "build": "vite build",
+        "package": "npm run build && php artisan config:cache && php artisan route:cache && php artisan view:cache"
     },
     "devDependencies": {
         "@popperjs/core": "^2.11.6",
