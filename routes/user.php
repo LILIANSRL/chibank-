@@ -29,6 +29,9 @@ use App\Http\Controllers\User\StripeVirtualController;
 use App\Http\Controllers\User\StrowalletVirtualController;
 use App\Http\Controllers\User\SudoVirtualCardController;
 use App\Http\Controllers\User\SupportTicketController;
+use App\Http\Controllers\User\MultiSigWalletController;
+use App\Http\Controllers\User\MultiSigTransactionController;
+use App\Http\Controllers\User\WalletAuthController;
 
 
 
@@ -295,6 +298,34 @@ Route::prefix("user")->name("user.")->group(function(){
         Route::post('store', 'store')->name('store');
         Route::get('conversation/{encrypt_id}','conversation')->name('conversation');
         Route::post('message/send','messageSend')->name('messaage.send');
+    });
+
+    //multi-signature wallets
+    Route::controller(MultiSigWalletController::class)->prefix("multi-sig-wallet")->name("multi.sig.wallet.")->group(function(){
+        Route::get('/', 'index')->name('index');
+        Route::get('create', 'create')->name('create');
+        Route::post('store', 'store')->name('store')->middleware('kyc.verification.guard');
+        Route::get('{id}', 'show')->name('show');
+        Route::get('{id}/transactions', 'transactions')->name('transactions');
+        Route::post('{id}/update-status', 'updateStatus')->name('update.status')->middleware('app.mode');
+        Route::delete('{id}', 'destroy')->name('destroy')->middleware('app.mode');
+    });
+
+    //multi-signature transactions
+    Route::controller(MultiSigTransactionController::class)->prefix("multi-sig-wallet/{walletId}/transaction")->name("multi.sig.transaction.")->group(function(){
+        Route::get('create', 'create')->name('create');
+        Route::post('store', 'store')->name('store')->middleware('kyc.verification.guard');
+        Route::get('{id}', 'show')->name('show');
+        Route::post('{id}/approve', 'approve')->name('approve')->middleware('kyc.verification.guard');
+        Route::post('{id}/reject', 'reject')->name('reject');
+        Route::post('{id}/execute', 'execute')->name('execute')->middleware('kyc.verification.guard');
+    });
+
+    //wallet authentication (linked wallets)
+    Route::controller(WalletAuthController::class)->prefix("wallet-auth")->name("wallet.auth.")->group(function(){
+        Route::get('linked-wallets', 'linkedWallets')->name('linked.wallets');
+        Route::post('link', 'linkWallet')->name('link');
+        Route::delete('unlink/{id}', 'unlinkWallet')->name('unlink')->middleware('app.mode');
     });
 
 });
