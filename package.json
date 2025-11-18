@@ -2,7 +2,11 @@
     "private": true,
     "scripts": {
         "dev": "vite",
-        "build": "vite build"
+        "build": "vite build",
+        "build:prod": "vite build --mode production",
+        "deploy": "./scripts/deploy.sh",
+        "docker:build": "./scripts/docker-build.sh",
+        "docker:push": "./scripts/docker-build.sh --push"
     },
     "devDependencies": {
         "@popperjs/core": "^2.11.6",

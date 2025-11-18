@@ -6,10 +6,12 @@ Enterprise-grade digital payment gateway solution built on Laravel.
 
 ### Chinese (中文)
 - [操作文档 (Operation Manual)](docs/zh-CN/操作文档.md)
+- [部署文档 (Deployment Guide)](docs/zh-CN/部署文档.md)
 - [白皮书 (White Paper)](docs/zh-CN/白皮书.md)
 
 ### English
 - [Operation Manual](docs/en/OPERATION-MANUAL.md)
+- [Deployment Guide](docs/en/DEPLOYMENT-GUIDE.md)
 - [White Paper](docs/en/WHITEPAPER.md)
 
 ## 🚀 Quick Start

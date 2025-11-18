@@ -6,7 +6,10 @@
 # Laravel
 /vendor/
 /node_modules/
+/public/build/
+/public/hot
 .env
+.env.backup
 
 # Archive and temporary files
 archive/
